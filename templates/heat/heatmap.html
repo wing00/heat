@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load pipeline %}
+
+{% block header %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="heat_wrapper">
+        <div class="container col-md-6">
+
+            <h2>Machine Learning Features Heatmap</h2>
+            <p>Using Machine Learning to recognize digits</p>
+            <p>From MNIST dataset, 28000 images of handwritten digits</p>
+            <p>Each column represents the all of the 784 features for the target number</p>
+            <p>Data was subdivided into 10 parts and then partially fitted with Stochastic Gradient Descent Classifier</p>
+            <p>Built with scikit-learn, django, and d3.js</p>
+        </div>
+        <div class="container col-md-6 align-center">
+            <h3 id="chart_title"></h3>
+
+            <div class="btn-group">
+                <button id="previous" class="btn  btn-secondary"><i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
+                <button id="next" class="btn btn-primary"><i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+            </div>
+    </div>
+
+            <div id="chart" data-url="{% static 'features/coef0.csv' %}"></div>
+            <div id="tooltip"></div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+{{ block.super }}
+    <div id="loaders">
+    {% stylesheet 'heat' %}
+    {% javascript 'heat' %}
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+.background {
+  fill: #eee;
+}
+
+.heat_wrapper {
+    text-align:center;
+
+}
+
+.legendtext {
+    font-size: 8px;
+    text-align: center;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#chart {
+    width: 100vw;
+    height: 100vh;
+    text-align:left;
+}
+
+line {
+  stroke: #fff;
+}
+
+text.active {
+  fill: red;
+}
+
+rect.bordered {
+    stroke: #E6E6E6;
+    stroke-width:2px;
+}
